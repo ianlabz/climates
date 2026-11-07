@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0F0E0D">
+  <title>Clima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@300;400&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <header class="top">
+      <div class="brand"><b>Clima</b><span>Previsão em tempo real</span></div>
+
+      <form id="search" class="search" autocomplete="off">
+        <label class="sr" for="q">Buscar cidade</label>
+        <input id="q" type="search" placeholder="Buscar cidade" required>
+        <button type="submit" class="btn primary">Buscar</button>
+        <button type="button" id="geo" class="btn">Minha localização</button>
+      </form>
+      <ul id="results" class="results" hidden></ul>
+    </header>
+
+    <div class="grid">
+      <section class="card hero" aria-live="polite">
+        <div class="kick">
+          <span id="place">Carregando…</span>
+          <span id="updated" class="live"></span>
+        </div>
+        <p id="temp" class="temp" aria-label="Temperatura atual">--</p>
+        <p id="cond" class="cond"></p>
+        <dl id="stats" class="kv"></dl>
+      </section>
+
+      <section class="card chartc">
+        <div class="hd">
+          <h3>Próximas 24 horas</h3>
+          <span class="aside">Linha: temperatura · Barras: umidade</span>
+        </div>
+        <div id="chart" class="chart"></div>
+      </section>
+
+      <section class="card weekc">
+        <div class="hd">
+          <h3>Próximos dias</h3>
+          <span class="aside">Mínima e máxima</span>
+        </div>
+        <ul id="week" class="week"></ul>
+      </section>
+    </div>
+
+    <footer class="foot">Dados: <a href="https://open-meteo.com/" rel="noopener noreferrer">Open-Meteo</a></footer>
+    <div id="status" class="status" role="status"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
